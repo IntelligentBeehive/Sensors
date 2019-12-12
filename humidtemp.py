@@ -13,7 +13,7 @@ sensor = adafruit_am2320.AM2320(i2c)
 host = '192.168.43.189'
 
 
-def posthumidity(value):
+def postHumidity(value):
     print("Posting humidity to API")
 
     url = 'http://'+host+':8090/sensors/'
@@ -26,7 +26,7 @@ def posthumidity(value):
     print(response.text)
 
 
-def posttemp(value):
+def postTemp(value):
     print("Posting temp to API")
 
     url = 'http://'+host+':8090/sensors/'
@@ -44,7 +44,7 @@ while True:
     print("Temperature: ", sensor.temperature)
     print("Humidity: ", sensor.relative_humidity)
 
-    posthumidity(sensor.relative_humidity)
-    posttemp(sensor.temperature)
+    postHumidity(sensor.relative_humidity)
+    postTemp(sensor.temperature)
 
     time.sleep(5.0 - ((time.time() - starttime) % 5.0))
