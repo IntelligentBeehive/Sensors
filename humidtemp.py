@@ -10,11 +10,13 @@ import adafruit_am2320
 i2c = busio.I2C(board.SCL, board.SDA)
 sensor = adafruit_am2320.AM2320(i2c)
 
+host = '192.168.43.189'
+
 
 def posthumidity(value):
     print("Posting humidity to API")
 
-    url = 'http://192.168.43.4:8090/sensors/'
+    url = 'http://'+host+':8090/sensors/'
     payload = {
         'type': 'humidity',
         'value': value
@@ -27,7 +29,7 @@ def posthumidity(value):
 def posttemp(value):
     print("Posting temp to API")
 
-    url = 'http://192.168.43.4:8090/sensors/'
+    url = 'http://'+host+':8090/sensors/'
     payload = {
         'type': 'temp',
         'value': value
