@@ -43,7 +43,7 @@ hx.set_reading_format("MSB", "MSB")
 # and I got numbers around 184000 when I added 2kg. So, according to the rule of thirds:
 # If 2000 grams is 184000 then 1000 grams is 184000 / 2000 = 92.
 # hx.set_reference_unit(113)
-# hx.set_reference_unit(referenceUnit)
+hx.set_reference_unit(-92)
 
 hx.reset()
 
@@ -87,8 +87,8 @@ while True:
         val = hx.get_weight(5)
         print("Weight: ", val)
 
-        postWeight(val)
-        time.sleep(5.0 - ((time.time() - starttime) % 5.0))
+        # postWeight(val)
+        # time.sleep(5.0 - ((time.time() - starttime) % 5.0))
 
         # To get weight from both channels (if you have load cells hooked up
         # to both channel A and B), do something like this
