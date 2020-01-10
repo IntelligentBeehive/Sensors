@@ -84,7 +84,10 @@ while True:
         # print binary_string + " " + np_arr8_string
 
         # Prints the weight. Comment if you're debbuging the MSB and LSB issue.
-        val = hx.get_weight(5)
+        # Exclude negative values
+        val = max(0, int(hx.get_weight(5)))
+        # Include negative values
+        # val = hx.get_weight(5)
         print("Weight: ", val)
 
         # postWeight(val)

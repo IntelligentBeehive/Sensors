@@ -10,7 +10,7 @@ import adafruit_am2320
 i2c = busio.I2C(board.SCL, board.SDA)
 sensor = adafruit_am2320.AM2320(i2c)
 
-host = '192.168.43.189'
+host = '192.168.43.92'
 
 
 def postHumidity(value):
