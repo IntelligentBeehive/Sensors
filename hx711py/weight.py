@@ -55,7 +55,7 @@ print("Tare done! Add weight now...")
 # hx.tare_A()
 # hx.tare_B()
 
-host = '192.168.43.189'
+host = '192.168.43.228'
 
 
 def postWeight(value):
